@@ -1,8 +1,8 @@
 from time import monotonic
 
-from take_and_release import knapsack as take_and_release_knapsack
-from naive_recursion import knapsack as naive_recursion_knapsack
-from dynamic_programming import knapsack as dynamic_programming_knapsack
+from take_and_release import take_and_release_knapsack
+from naive_recursion import naive_recursion_knapsack
+from dynamic_programming import dynamic_programming_knapsack
 
 
 def time_algorithm(algorithm, times):
@@ -19,7 +19,7 @@ def time_algorithm(algorithm, times):
 
     interval = end - start
 
-    print("max_value={}, interval={:0.10f}".format(max_value, interval))
+    print("max_value={}, interval={:0.10f}, function={}".format(max_value, interval, algorithm.__qualname__))
 
 
 algorithms = [naive_recursion_knapsack, dynamic_programming_knapsack, take_and_release_knapsack]

@@ -8,7 +8,7 @@ Reference: https://www.geeksforgeeks.org/python-program-for-dynamic-programming-
 """
 
 
-def knapsack(W, wt, val, n):
+def naive_recursion_knapsack(W, wt, val, n):
 
     # Base Case
     if n == 0 or W == 0:
@@ -17,10 +17,13 @@ def knapsack(W, wt, val, n):
     # If weight of the nth item is more than Knapsack of capacity
     # W, then this item cannot be included in the optimal solution
     if (wt[n - 1] > W):
-        return knapsack(W, wt, val, n - 1)
+        return naive_recursion_knapsack(W, wt, val, n - 1)
 
     # return the maximum of two cases:
     # (1) nth item included
     # (2) not included
     else:
-        return max(val[n - 1] + knapsack(W - wt[n - 1], wt, val, n - 1), knapsack(W, wt, val, n - 1))
+        return max(
+            val[n - 1] + naive_recursion_knapsack(W - wt[n - 1], wt, val, n - 1),
+            naive_recursion_knapsack(W, wt, val, n - 1)
+        )

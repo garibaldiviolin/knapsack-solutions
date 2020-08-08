@@ -4,7 +4,7 @@ return it later if another one more valuable is found.
 """
 
 
-def knapsack(W, wt, val, n):
+def take_and_release_knapsack(W, wt, val, n):
     items_taken = []  # index to the items taken
 
     for i in range(n + 1):

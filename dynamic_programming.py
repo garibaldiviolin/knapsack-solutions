@@ -6,7 +6,7 @@ Reference: https://www.geeksforgeeks.org/python-program-for-dynamic-programming-
 """
 
 
-def knapsack(W, wt, val, n):
+def dynamic_programming_knapsack(W, wt, val, n):
     K = [[0 for x in range(W + 1)] for x in range(n + 1)]
 
     # Build table K[][] in bottom up manner
